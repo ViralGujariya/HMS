@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- start css link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="CSS/profile.css">
+    <!--end css link-->
+    <!--start js link-->
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/sweetalert.js"></script>
+
+    <!--end js link-->
+    <title>Profile</title>
+    <style>
+        @media print{
+            .no-print{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar no-print navbar-expand-md bg-light shadow-lg fixed-top navbar-light">
+        <div class="container-fluid">
+            <img src="../Image/logo1.png" class="rounded-circle" width="60" alt="" srcset="">
+            <a href="#" class="mx-4 text-white navbar-brand">
+                HMS
+            </a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#MyMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="MyMenu">
+                <ul class="navbar-nav w-100 justify-content-end">
+                    <li class="nav-item mx-4 fw-bold text-white ">
+                       Welcome!!
+                    </li>
+                    <li class="nav-item mx-4 fw-bold text-white nav-brand">
+                        V.K.Gujariya
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-collapse collapse" id="MyMenu">
+                <ul class="navbar-nav  w-100 justify-content-end">
+                    <div class="input-group mx-5 w-50">
+                        <input type="search" class="search-input form-control" placeholder="Search by Name,Mobile No...">
+                        <span class="input-group-text action-btn fw-bold text-white btn">Search</span>
+                    </div>
+                    <button class="btn action-btn logout-btn text-white  fw-bold px-4">Logout</button>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <!--nav tab-->
+                <ul class="nav no-print nav-tabs">
+                    <li class="nav-item">
+                        <a href="#booking" class="nav-link active tab-btn " data-bs-toggle="tab">
+                            Booking
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inhouse" class="nav-link tab-btn  " data-bs-toggle="tab">
+                            In House
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#archive" class="nav-link  tab-btn " data-bs-toggle="tab">
+                            Archive
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="#cashier" class="nav-link cashier-tab   tab-btn " data-bs-toggle="tab">
+                            Cashier
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+                <!--nav pane-->
+                <div class="tab-content">
+                    <div class="tab-pane active search-pane   container-fluid mt-3" id="booking">
+                        <div class="row no-print mt-5">
+                            <div class="col-md-4 text-center">
+                                <button data-bs-toggle="modal" data-bs-target="#registration-modal"
+                                    class="btn action-btn b-register-btn px-4 text-white fw-bold">Register</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn print-btn px-4 text-white fw-bold">Print</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn total-btn  text-white fw-bold">Total Booking</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <h1>All Booking Data </h1>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="no-print">Sr</th>
+                                        <th class="text-nowrap">Location</th>
+                                        <th class="text-nowrap">Room No</th>
+                                        <th class="text-nowrap">FullName</th>
+                                        <th class="text-nowrap">CheckIn</th>
+                                        <th class="text-nowrap">Checkout</th>
+                                        <th class="text-nowrap">Total person</th>
+                                        <th class="text-nowrap">Mobile</th>
+                                        <th class="text-nowrap">Price</th>
+                                        <th class="text-nowrap">Notice</th>
+                                        <th class="no-print">Created At</th>
+                                        <th class="no-print">Action</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <tbody class="booking-list">
+
+                                    </tbody>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row no-print py-5 show-booking-rooms">
+                            
+                        </div>
+                    </div>
+                    <div class="tab-pane search-pane   container-fluid mt-3" id="inhouse">
+                        <div class="row no-print mt-5">
+                            <div class="col-md-4 text-center">
+                                <button data-bs-toggle="modal" data-bs-target="#inhouse-modal"
+                                    class="btn action-btn in-house-reg-btn px-4 text-white fw-bold">Register</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn print-btn  px-4 text-white fw-bold">Print</button>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <button class="btn action-btn total-btn  text-white fw-bold">Total InHouse</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <h1>All In House Data </h1>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="no-print">Sr</th>
+                                        <th class="text-nowrap">Location</th>
+                                        <th class="text-nowrap">Room No</th>
+                                        <th class="text-nowrap">FullName</th>
+                                        <th class="text-nowrap">CheckIn</th>
+                                        <th class="text-nowrap">Checkout</th>
+                                        <th class="text-nowrap">Total person</th>
+                                        <th class="text-nowrap">Mobile</th>
+                                        <th class="text-nowrap">Price</th>
+                                        <th class="text-nowrap">Notice</th>
+                                        <th class="no-print">Created At</th>
+                                        <th class="no-print">Action</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <tbody class="inhouse-list">
+
+                                    </tbody>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="row no-print py-5 show-inhouse-rooms">
+                            <div class="card text-center px-0 col-md-2">
+                                <div class="bg-danger text-white fw-bold card-header ">
+                                    15
+                                </div>
+                                <div class="card-body">
+                                    <img src="../Image/user-img.png" class="w-100" alt="">
+                                </div>
+                                <div class="card-footer">
+                                    <button class="action-btn btn text-white">
+                                        In
+                                    </button>
+                                    <button class="action-btn btn text-white">
+                                        Out
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane search-pane   container-fluid mt-3" id="archive">
+                        <div class="row  no-print mt-5">
+                            <div class="col-md-6">
+                                <button class="btn action-btn print-btn print-btn  px-4 text-white fw-bold">Print</button>
+                                <button class="btn action-btn total-btn  text-white fw-bold">Total Archive</button>
+                            </div>
+                            <div class="row mt-5">
+
+                            </div>
+                        </div>
+                        <div>
+                            <h1>All Archive Data </h1>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th class="no-print">Sr</th>
+                                        <th class="text-nowrap">Location</th>
+                                        <th class="text-nowrap">Room No</th>
+                                        <th class="text-nowrap">FullName</th>
+                                        <th class="text-nowrap">CheckIn</th>
+                                        <th class="text-nowrap">Checkout</th>
+                                        <th class="text-nowrap">Total person</th>
+                                        <th class="text-nowrap">Mobile</th>
+                                        <th class="text-nowrap">Price</th>
+                                        <th class="text-nowrap">Notice</th>
+                                        <th class="no-print">Created At</th>
+                                        <th class="no-print">Action</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <tbody class="archive-list">
+
+                                    </tbody>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane cashier-tab-pan container-fluid mt-3" id="cashier">
+                        <div>
+                            <h1>All Cashier Data </h1>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Sr</th>
+                                        <th>Room No</th>
+                                        <th>Cashier</th>
+                                        <th>Date/Time</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <tbody class="cashier-list">
+                                        
+                                    </tbody>
+                                </tr>
+                            </table>
+                            <div class="d-flex  mt-5 align-items-center justify-content-between">
+                                        <h1>Total</h1>
+                                        <h1 class="total" style="margin-right: 90px;">2055</h1>
+                                    </div>
+                        </div>
+                        <div class="row no-print mt-5">
+                            <div class="col-md-3 text-center">
+                                <button
+                                data-bs-toggle="modal"
+                                data-bs-target="#cashier-modal"
+                                class="btn cash-btn action-btn  px-4 text-white fw-bold">Add Cash</button>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <button class="btn close-cashier-btn action-btn  text-white fw-bold">Close Cashier</button>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <button 
+                                data-bs-toggle="modal"
+                                data-bs-target="#cashier-arch-modal"
+                                onclick="showCashArchFunc()"
+                                class="btn arch-btn action-btn  text-white fw-bold">Archive Cashier</button>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <button  class="btn action-btn print-btn  text-white fw-bold">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    <!--Start modals coding-->
+    <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Registration Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="booking-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="fullname" required type="text" placeholder="FullName"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="location" required type="text" placeholder="Location"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="roomNo" required type="text" placeholder="Room No"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="totalPerson" id="totalPerson" required type="text" placeholder="Total Person"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Check In Date</label>
+                                <input name="CheckInDate" id="checkInDate" required type="date" class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Check Out Date</label>
+                                <input   name="CheckOutDate" id="checkOutDate" required type="date" class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <select id="roomType" class="mb-3 form-control">
+                                    <option value="">Select Room Type</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Suite">Suite</option>
+                                </select>
+                            
+                                <label>Price:</label>
+                                <input id="price" name="price" type="text" readonly class="mb-3 form-control"><br>
+                            </div>
+                            <div class="col-md-6">
+                                <input name="mobile" required type="number" placeholder="Mobile No"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <textarea name="notice" required class="form-control" placeholder="Notice..."></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <button type="submit" class="btn action-btn text-white fw-bold">Register</button>
+                            <button type="button" class="btn d-none bg-danger text-white fw-bold">Update</button>
+                        </div>
+                        <script>
+                            const ROOM_PRICES = {
+                                "Standard": 500,
+                                "Deluxe": 700,
+                                "Suite": 1000
+                            };
+                            
+                            function calculatePrice() {
+                                const roomType = document.getElementById('roomType').value;
+                                const persons = parseInt(document.getElementById('totalPerson').value) || 0;
+                                const checkInDate = document.getElementById('checkInDate').value;
+                                const checkOutDate = document.getElementById('checkOutDate').value;
+                            
+                                if (roomType && checkInDate && checkOutDate && persons > 0) {
+                                    const checkIn = new Date(checkInDate);
+                                    const checkOut = new Date(checkOutDate);
+                            
+                                    if (checkOut > checkIn) {
+                                        const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                                        const pricePerDay = ROOM_PRICES[roomType];
+                                        const totalPrice = days * pricePerDay * persons;
+                                        document.getElementById('price').value = totalPrice;
+                                    } else {
+                                        document.getElementById('price').value = "Invalid Dates";
+                                    }
+                                } else {
+                                    document.getElementById('price').value = '';
+                                }
+                            }
+                            
+                            // Attach event listeners
+                            document.getElementById('roomType').addEventListener('change', calculatePrice);
+                            document.getElementById('totalPerson').addEventListener('input', calculatePrice);
+                            document.getElementById('checkInDate').addEventListener('change', calculatePrice);
+                            document.getElementById('checkOutDate').addEventListener('change', calculatePrice);
+                            </script>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal animate__animated animate__zoomIn" id="inhouse-modal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>In House Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="inhouse-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="fullname" required type="text" placeholder="FullName"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="location" required type="text" placeholder="Location"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="roomNo" required type="text" placeholder="Room No"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="totalPerson" id="t1" required type="text" placeholder="Total Person"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label>Check In Date</label>
+                                <input name="CheckInDate" id="InDate" required type="date" class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Check Out Date</label>
+                                <input   name="CheckOutDate" id="OutDate" required type="date" class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <select id="RType" class="mb-3 form-control">
+                                    <option value="">Select Room Type</option>
+                                    <option value="Standard">Standard</option>
+                                    <option value="Deluxe">Deluxe</option>
+                                    <option value="Suite">Suite</option>
+                                </select>
+                            
+                                <label>Price:</label>
+                                <input id="P1" name="price" type="text" readonly class="mb-3 form-control"><br>
+                            </div>
+                            <div class="col-md-6">
+                                <input name="mobile" required type="number" placeholder="Mobile No"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <textarea name="notice" required class="form-control" placeholder="Notice..."></textarea>
+                        </div>
+                        <div class="row mb-3">
+                            <button type="submit" class="btn action-btn text-white fw-bold">Register</button>
+                            <button type="button" class="btn d-none bg-danger text-white fw-bold">Update</button>
+                        </div>
+                        <script>
+                            const ROOM_PRICE = {
+                                "Standard": 500,
+                                "Deluxe": 700,
+                                "Suite": 1000
+                            };
+                            
+                            function calculatePrice() {
+                                const roomType = document.getElementById('RType').value;
+                                const persons = parseInt(document.getElementById('t1').value) || 0;
+                                const checkInDate = document.getElementById('InDate').value;
+                                const checkOutDate = document.getElementById('OutDate').value;
+                            
+                                if (roomType && checkInDate && checkOutDate && persons > 0) {
+                                    const checkIn = new Date(checkInDate);
+                                    const checkOut = new Date(checkOutDate);
+                            
+                                    if (checkOut > checkIn) {
+                                        const days = Math.ceil((checkOut - checkIn) / (1000 * 60 * 60 * 24));
+                                        const pricePerDay = ROOM_PRICE[roomType];
+                                        const totalPrice = days * pricePerDay * persons;
+                                        document.getElementById('P1').value = totalPrice;
+                                    } else {
+                                        document.getElementById('P1').value = "Invalid Dates";
+                                    }
+                                } else {
+                                    document.getElementById('P1').value = '';
+                                }
+                            }
+                            
+                            // Attach event listeners
+                            document.getElementById('RType').addEventListener('change', calculatePrice);
+                            document.getElementById('t1').addEventListener('input', calculatePrice);
+                            document.getElementById('InDate').addEventListener('change', calculatePrice);
+                            document.getElementById('OutDate').addEventListener('change', calculatePrice);
+                        </script>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal animate__animated animate__zoomIn" id="cashier-modal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Cashier Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="cashier-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="amount" required type="number" placeholder="Amount"
+                                    class="mb-3 form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="roomNo" required type="number" placeholder="Room No"
+                                    class="mb-3 form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-12">
+                                <input name="cashierName" required type="text" readonly value="viral gujariya"
+                                    class="mb-3 form-control">
+                            </div>
+                        <div class="row mb-3">
+                            <button type="submit" class="btn action-btn text-white fw-bold">Register</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal animate__animated animate__zoomIn" id="cashier-arch-modal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>Archive Cash </h5>
+                    <button class="btn no-print action-btn arch-print-btn mx-5 mb-1 text-white">Print</button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <div class="table-responsive">
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Sr</th>
+                                        <th>Cashier</th>
+                                        <th>Date/Time</th>
+                                        <th>Amount</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <tbody class="cashier-arch-list">
+                                        
+                                    </tbody>
+                                </tr>
+                            </table>
+                            <div class="d-flex  mt-5 align-items-center justify-content-between">
+                                        <h1>Total</h1>
+                                        <h1 class="arch-total" style="margin-right: 90px;"></h1>
+                                    </div>
+                        </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End modals coding-->
+
+    <!--stsrt js link-->
+    <script src="JS/profile.js"></script>
+    <!--end js link-->
+</body>
+
+</html>
